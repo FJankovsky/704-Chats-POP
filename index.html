@@ -9,9 +9,11 @@
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
-        #map {
-            width: 551px;
-            height: 896px;
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
         }
         </style>
         <title></title>
@@ -33,7 +35,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[34.21764251803276,-85.1838201290984],[34.82166775573771,-84.81289187909837]]);
+        }).fitBounds([[33.81766159999995,-85.31996228278692],[35.02571207540986,-84.57810578278688]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -60,7 +62,7 @@
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Descriptio</th>\
+                        <th scope="row">Description</th>\
                         <td>' + (feature.properties['Descriptio'] !== null ? autolinker.link(feature.properties['Descriptio'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -72,11 +74,11 @@
                         <td>' + (feature.properties['Longitude'] !== null ? autolinker.link(feature.properties['Longitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ft to Stru</th>\
+                        <th scope="row">Feet to Structure</th>\
                         <td>' + (feature.properties['Ft to Stru'] !== null ? autolinker.link(feature.properties['Ft to Stru'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ft at Exit</th>\
+                        <th scope="row">Feet at Exit</th>\
                         <td>' + (feature.properties['Ft at Exit'] !== null ? autolinker.link(feature.properties['Ft at Exit'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -88,7 +90,7 @@
                         <td>' + (feature.properties['Splice'] !== null ? autolinker.link(feature.properties['Splice'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Splice Typ</th>\
+                        <th scope="row">Splice Type</th>\
                         <td>' + (feature.properties['Splice Typ'] !== null ? autolinker.link(feature.properties['Splice Typ'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -100,7 +102,7 @@
                         <td>' + (feature.properties['Cable'] !== null ? autolinker.link(feature.properties['Cable'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Fiber Coun</th>\
+                        <th scope="row">Fiber Count</th>\
                         <td>' + (feature.properties['Fiber Coun'] !== null ? autolinker.link(feature.properties['Fiber Coun'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -112,7 +114,7 @@
                         <td>' + (feature.properties['Object Key'] !== null ? autolinker.link(feature.properties['Object Key'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Link</th>\
+                        <th scope="row">Image Link</th>\
                         <td>' + (feature.properties['Link'] !== null ? autolinker.link(feature.properties['Link'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -162,7 +164,7 @@
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">FiberCount</th>\
+                        <th scope="row">Fiber Count</th>\
                         <td>' + (feature.properties['FiberCount'] !== null ? autolinker.link(feature.properties['FiberCount'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
